@@ -30,6 +30,11 @@ export default {
     background-color: rgba(239, 237, 237, 0.518);
     border: 1px solid black;
 
+    &:hover {
+        box-shadow: 0 0 6px 3px red;
+        cursor: pointer;
+
+    }
 
     img {
         height: 150px;
@@ -37,11 +42,7 @@ export default {
         border-radius: 50%;
         border: 3px solid red;
 
-        &:hover {
-            box-shadow: 10px 5px 20px gold;
-            cursor: pointer;
 
-        }
     }
 
     .pokemon-schedule {
