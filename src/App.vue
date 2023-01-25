@@ -23,11 +23,20 @@ export default {
                 .then(res => {
                     store.pokemon = res.data.docs;
                 })
+        },
+        fetchGeneric(url) {
+            axios.get(url)
+                .then(res => {
+                    store.type = res.data;
+                    console.log(store.type)
+
+                })
         }
 
     },
     created() {
         this.fetchPokemon(store.apiUri)
+        this.fetchGeneric(store.apiType)
 
     }
 }
