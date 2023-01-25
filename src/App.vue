@@ -1,9 +1,30 @@
 <script>
+import axios from 'axios';
+import { store } from './data/store';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
-    components: { AppHeader, AppMain }
+    name: 'Pokedex',
+    components: { AppHeader, AppMain },
+    data() {
+        return {
+            store
+        }
+    },
+    methods: {
+        fetchPokemon(url) {
+            axios.get(url)
+                .then(res => {
+                    store.pokemon = res.data.docs;
+                })
+        }
+
+    },
+    created() {
+        this.fetchPokemon(store.apiUri)
+
+    }
 }
 </script>
 

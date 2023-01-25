@@ -33,6 +33,7 @@ export default {
     &:hover {
         box-shadow: 0 0 6px 3px red;
         cursor: pointer;
+        filter: grayscale(1);
 
     }
 
@@ -43,11 +44,23 @@ export default {
         border: 3px solid red;
 
 
+
     }
 
     .pokemon-schedule {
         background-color: rgba(220, 221, 162, 0.518);
         border-radius: 20px;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 1px;
+            margin: 1rem auto;
+            background-color: black;
+        }
     }
+
+
 }
 </style>

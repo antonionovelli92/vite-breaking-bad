@@ -2,7 +2,8 @@
 import PokemonList from './pokemon/Pokemonlist.vue';
 export default {
     name: 'AppMain',
-    components: { PokemonList }
+    components: { PokemonList },
+
 }
 </script>
 
