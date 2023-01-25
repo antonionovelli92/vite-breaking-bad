@@ -27,12 +27,17 @@ export default {
 <style scoped lang="scss">
 .pokemon-table {
     margin-top: 30px;
-    background-color: rgba(239, 237, 237, 0.518);
-    border: 1px solid black;
+    background-color: rgba(239, 237, 237, 0.612);
+    border: 8px solid goldenrod;
+    border-radius: 20px;
+
 
     &:hover {
         box-shadow: 0 0 6px 3px red;
-        cursor: pointer;
+        cursor: url('../../assets/img/Pokeball.png'), ("https: //freesvg.org/img/Pokeball.png"),
+            default;
+        cursor: url("https: //freesvg.org/img/Pokeball.png"), auto;
+        ;
         filter: grayscale(1);
 
     }
