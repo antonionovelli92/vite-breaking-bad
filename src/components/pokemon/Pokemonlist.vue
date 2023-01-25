@@ -5,7 +5,9 @@ export default {
     name: 'PokemonList',
     components: { PokemonCard },
     data() {
-        return { store }
+        return {
+            store
+        }
     }
 
 }
