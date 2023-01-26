@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             store,
-            filtred: '',
+            typeName: '',
 
         }
     },
@@ -28,9 +28,16 @@ export default {
             axios.get(url)
                 .then(res => {
                     store.type = res.data;
-                    console.log(store.type)
 
                 })
+        },
+        onTermChange(type) {
+            this.typeName = type;
+
+        },
+        searchType() {
+            const url = `${this.apiType.length} ${this.typeName}`
+            this.fetchGeneric(url);
         }
 
     },
@@ -44,7 +51,7 @@ export default {
 
 <template>
     <app-header></app-header>
-    <filtred></filtred>
+    <filtred @term-change="onTermChange" @search="searchType"></filtred>
     <app-main></app-main>
 </template>
 

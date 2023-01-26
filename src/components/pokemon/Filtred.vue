@@ -6,11 +6,9 @@ export default {
     data() {
         return {
             store,
-
+            type: ''
         }
-    }, methods: {
-
-    }
+    }, emits: ['term-change', 'search']
 
 }
 </script>
@@ -18,7 +16,8 @@ export default {
 
 <template>
     <div class="container d-flex justify-content-end shadow  w-50 form-floating">
-        <select class="form-select " id="floatingSelect">
+        <select v-model.trim="type" class="form-select " id="floatingSelect" @change="$emit('term-change', type)"
+            @keyup.enter="$emit('search', type)">
             <option selected>Tutti</option>
             <option v-for="poke in store.type" :key="poke" :value="poke">{{ poke }}</option>
         </select>
@@ -32,11 +31,3 @@ export default {
 
 <script></script>
 
-let chars = ['A', 'B', 'A', 'C', 'B'];
-
-let uniqueChars = [];
-chars.forEach((element) => {
-    if (!uniqueChars.includes(element)) {
-        uniqueChars.push(element);
-    }
-});
